@@ -1,0 +1,21 @@
+{% extends 'music/layout.html' %}
+
+{% block content %}
+        {% for post in posts %}
+            <div class="box">
+                <div class="box_info">
+                    <p>Жанр: {{ post.genre }}</p>
+                    <p>Дата: {{ post.time_updated|date:'d-m-Y H:i:s' }}</p>
+                </div>
+                {% if post.photo %}
+                    <img src="{{ post.photo.url}}">
+                {% endif %}
+                <h2>{{ post.name }}</h2>
+                <p>{{ post.description|linebreaks|truncatewords:50 }}</p>
+                <div class="post_href">
+                    <a href="{{ post.get_absolute_url }}">Читать пост</a>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+{% endblock %}

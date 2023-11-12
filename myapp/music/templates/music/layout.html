@@ -1,0 +1,44 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'music/css/music.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <section class="top_navi">
+        {% block menu %}
+            <ul>
+                {% for item in menu %}
+                    <li><a href="{% url item.url_name %}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endblock %}
+    </section>
+    <section class="content">
+        <main class="main_left">
+            <ul>
+                {% if not select_url %}
+                    <li>Все категории</li>
+                {% else %}
+                    <li><a href="{% url 'main_page' %}">Все категории</a></li>
+                {% endif %}
+                {% for genre in genres %}
+                    {% if select_url == genre.pk %}
+                        <li>{{ genre.name }}</li>
+                    {% else %}
+                        <li><a href="{{ genre.get_absolute_url }}">{{ genre.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </main>
+        <main class="main_right">
+            {% block content %}{% endblock %}
+        </main>
+    </section>
+</body>
+</html>

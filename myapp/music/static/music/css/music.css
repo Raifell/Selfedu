@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+.top_navi{
+    width: 100vw;
+    height: 6vh;
+    background: #1c1c1c;
+    color: dimgray;
+    display: flex;
+    align-items: center;
+}
+.top_navi ul{
+    margin: auto;
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+.top_navi ul li, .top_navi ul a{
+    text-decoration: none;
+    color: dimgray;
+    font-size: 20px;
+}
+.top_navi ul li:hover, .top_navi ul a:hover{
+    color: brown;
+}
+.content{
+    width: 100vw;
+    min-height: 94vh;
+    display: flex;
+}
+.content .main_left{
+    width: 15vw;
+    min-width: 120px;
+    min-height: 94vh;
+    background: dimgray;
+    border-right: 3px solid #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content .main_left ul{
+    margin-top: 20vh;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.content .main_left ul li{
+    font-weight: bold;
+    font-size: 24px;
+    color: whitesmoke;
+}
+.content .main_left ul a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    color: #1c1c1c;
+}
+.content .main_left ul a:hover{
+    color: brown;
+}
+.content .main_right{
+    width: 85vw;
+    min-height: 94vh;
+    background: #ede4d9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 50px;
+}
+.content .main_right .box{
+    margin: auto;
+    padding: 30px;
+    width: 60vw;
+    min-height: 25vh;
+    border-radius: 24px;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.content .main_right .box p{
+    font-size: 18px;
+}
+.content .main_right .box .post_href{
+    width: 55vw;
+    display: flex;
+    justify-content: flex-end;
+}
+.content .main_right .box .post_href a{
+    text-decoration: none;
+    padding: 5px;
+    font-weight: bold;
+    border: 1px solid #1c1c1c;
+    border-radius: 12px;
+    color: #1c1c1c;
+}
+.content .main_right .box .post_href a:hover{
+    color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+}
+.content .main_right .box .box_info{
+    width: 59vw;
+    padding: 5px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    background: lightgray;
+}
